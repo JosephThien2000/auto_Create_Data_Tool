@@ -22,13 +22,19 @@ sale_amount = []
 def auto_Create_Data(num):
     # Số dòng dữ liệu muốn tạo
     for i in range(int(num)):
-        coin_rand = random.randint(1,100)
-        point_rand = random.randint(1,10)
-        voucher_rand = random.randint(1,5)
-        voucher_percent_rand = f"{random.randint(1,5)}%"
-        sale_amount_rand = random.randint(100,10000)
+        sale_amount_rand = random.randint(100,1000)
+        coin_rand = sale_amount_rand * 0.1
+        voucher_rand = sale_amount_rand * 0.3
+        point_rand = random.choice([sale_amount_rand*0.9, sale_amount_rand])
         user_rand = random.choice(user_list)
         state_rand = random.choice(state_list)
+        # coin_rand = random.randint(1,100)
+        # point_rand = random.randint(1,10)
+        # voucher_rand = random.randint(1,5)
+        voucher_percent_rand = f"{random.randint(1,5)}%" # ???
+        # sale_amount_rand = random.randint(100,10000)
+        # user_rand = random.choice(user_list)
+        # state_rand = random.choice(state_list)
 
         value_rand = 0
 
