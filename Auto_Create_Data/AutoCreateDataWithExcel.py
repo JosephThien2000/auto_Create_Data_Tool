@@ -5,6 +5,7 @@ from pandas import ExcelWriter
 from pandas import ExcelFile
 import random
 import tkinter.messagebox as mbox
+from xlsxwriter import *
 
 # gán các biến và các giá trị của chúng
 user_list = ['Nhà cung cấp', 'Khách']
@@ -65,5 +66,5 @@ def auto_Create_Data(num):
 
     writer = ExcelWriter('data.xlsx')
     df.to_excel(writer, 'Sheet1', index=False)
-    writer.save()
+    writer.close() # The save() method has been deprecated and removed in Pandas. You should use close() instead.
     mbox.showinfo("Information", "Create successfully!")
